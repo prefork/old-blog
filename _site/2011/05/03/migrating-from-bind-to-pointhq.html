@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Migrating from BIND to PointHQ</title>
+   <meta name="author" content="Nate Benes" />
+   <link href="http://feeds.feedburner.com/stdioh" rel="alternate" title="stdio" type="application/atom+xml" />
+   <meta name="description" content="data, protocols, and coffee; tales from an engineer with a passion for big data." /> 
+   <meta name="keywords" content="data, protocols, coffee, engineer, unl, big data, stdio, ruby" /> 
+   <!--<link rel="canonical" href="http://blog.stdio.me/" />-->
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+
+</head>
+<body>
+
+<div class="site">
+  <div class="title">
+    <a href="/">#include &lt;stdio.me&gt;</a>
+    <a class="extra" href="/">home</a>
+  </div>
+  
+  <div id="post">
+<h1>Migrating from BIND to PointHQ</h1>
+
+<p class="meta">03 May 2011 - Lincoln</p>
+
+
+<p>The last few weeks, I migrated a bunch of my DNS to PointHQ.  Their support is quick, the website is pretty, and they have an API (which makes me happy.).  But they don't support* importing BIND zone files, which is what pretty much every other site exports.  So I wrote my own little tool in ruby.<!--more--></p>
+
+<ol>
+
+    <li>Install the dependencies like so:
+
+<pre class="prettyprint">gem install point zonefile</pre>
+
+</li>
+
+    <li>Download or clone the script from <a title="PointHQ Importer" href="https://gist.github.com/954279" target="_blank">Github</a>.</li>
+
+    <li>Update the configuration stuff at the top. (the zoneID is the number you see in the URL when you view that domain in Point.)</li>
+
+    <li>Run it! <br /><pre class="prettyprint">ruby dns.rb</pre></li>
+
+</ol>
+
+
+<p>This tool DOES NOT support TXT records that don't have their value wrapped in quotes. &nbsp;It's a known bug in the gem. &nbsp;I could write my own parser pretty easy (or patch zonefile) but I don't usually have that many TXT records so I don't care that much.</p>
+
+<p><em>*According to their staff, support is on the way.</em></p>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>02 May 2011</span> &raquo; <a href="/2011/05/02/accidents-for-the-masses.html">Accidents for the masses!</a></li>
+    
+  </ul>
+</div>
+  
+  <div class="footer">
+    <div class="contact">
+      <p>
+        Nate<br />
+        Cofounder of <a href="http://hackneb.org/">HackNeb</a><br />
+        nate@stdio.me
+      </p>
+    </div>
+    <div class="contact">
+      <p>
+        <a href="http://github.com/rdnck76/">github.com/rdnck76</a><br />
+        <a href="http://twitter.com/rdnck76/">twitter.com/rdnck76</a><br />
+		<a href="http://stdio.me/">stdio.me</a><br />
+      </p>
+    </div>
+    <div class="rss">
+      <a href="http://feeds.feedburner.com/stdioh">
+        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
+      </a>
+    </div>
+  </div>
+</div>
+
+<a href="http://github.com/rdnck76"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-22882666-1");
+pageTracker._trackPageview();
+</script>
+<!-- Google Analytics end -->
+
+</body>
+</html>
