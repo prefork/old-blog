@@ -11,7 +11,7 @@ title: Meet Frank!
 ## The Story:
 [Ben Milne](http://benmilne.com/), the man behind [Dwolla](https://dwolla.com) (a cool payment processing system targeted at developers), tweeted this:
 
-![bpmilne-servers](/images/posts/bpmilne-servers-openneb.png "Servers for all!")
+![bpmilne-servers](/images/posts/bpmilne-servers-openneb.PNG "Servers for all!")
 
 It just so happens, [Ross](https://twitter.com/rossnelson) and I have [two](http://hackneb.org) secret [projects](http://openneb.org) of our own.  So we did the only natural thing, we pitched them!  Shortly after we were offered a pair of servers and were road-tripping to [Des Moines](http://desmob.com/) for servers and a tiny little cup of coffee.
 
